@@ -12,13 +12,11 @@ export default function search(): Object {
   };
 }
 
-function photosSearcher(url, keyword = "", page = 1, per_page = 10, collections = [""], orientation = undefined) {
+function photosSearcher(url, keyword = "", page = 1, per_page = 10, orientation = undefined) {
   const query ={
     query: keyword,
     page,
     per_page,
-    collections: collections.length > 1 ? 
-      collections.join(",") : collections.toString(),
     ...orientation !== undefined ? { orientation } : {},
   };
 
